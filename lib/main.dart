@@ -1,10 +1,37 @@
 import 'package:flutter/material.dart';
+import './BasicWidget/MyWidget.dart';
 
-void main() {
-  runApp(MaterialApp(
-    title: 'My app',
-    home: Home(),
-  ));
+enum ListItemType {
+  none,
+  basicWidget,
+}
+
+extension ListItemTypeExtension on ListItemType {
+  String get rowName {
+    switch (this) {
+      case ListItemType.none:
+        return 'none';
+      case ListItemType.basicWidget:
+        return 'Basic Widget';
+      default:
+        return 'not defined';
+    }
+  }
+
+  Widget get widget {
+    switch (this) {
+      case ListItemType.none:
+        return const Text('none');
+      case ListItemType.basicWidget:
+        return MyWidget();
+      default:
+        return const Text('not defined');
+    }
+  }
+
+  void talk() {
+    print('meow');
+  }
 }
 
 class Home extends StatelessWidget {
@@ -27,22 +54,17 @@ class Home extends StatelessWidget {
         ],
       ),
       body: Center(
-        // child: Text('Hello, world'),
         child: ListView(
-          children: [
-            ListTile(
-              leading: Icon(Icons.map),
-              title: Text('Album'),
-            ),
-            ListTile(
-              leading: Icon(Icons.map),
-              title: Text('Album'),
-            ),
-            ListTile(
-              leading: Icon(Icons.map),
-              title: Text('Album'),
-            ),
-          ],
+          children: ListItemType.values.map((type) {
+            return ListTile(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => type.widget));
+              },
+              leading: const Icon(Icons.map),
+              title: Text(type.rowName),
+            );
+          }).toList(),
         ),
       ),
       floatingActionButton: const FloatingActionButton(
@@ -52,4 +74,11 @@ class Home extends StatelessWidget {
       ),
     );
   }
+}
+
+void main() {
+  runApp(MaterialApp(
+    title: 'My app',
+    home: Home(),
+  ));
 }
