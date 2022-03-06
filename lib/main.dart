@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import './BasicWidget/MyWidget.dart';
+import './MyTheme.dart';
+import './MyGestureDetector.dart';
 
 enum ListItemType {
   none,
   basicWidget,
+  theme,
+  gestureDetector,
 }
 
 extension ListItemTypeExtension on ListItemType {
@@ -13,20 +17,32 @@ extension ListItemTypeExtension on ListItemType {
         return 'none';
       case ListItemType.basicWidget:
         return 'Basic Widget';
-      default:
-        return 'not defined';
+      case ListItemType.theme:
+        return 'Theme';
+      case ListItemType.gestureDetector:
+        return 'GestureDetector';
     }
   }
 
   Widget get widget {
+    Widget content;
     switch (this) {
       case ListItemType.none:
-        return const Text('none');
+        content = const Text('none');
+        break;
       case ListItemType.basicWidget:
-        return MyWidget();
-      default:
-        return const Text('not defined');
+        content = MyWidget();
+        break;
+      case ListItemType.theme:
+        content = MyThemeWidget();
+        break;
+      case ListItemType.gestureDetector:
+        content = MyGestureDetector();
+        break;
     }
+    return Scaffold(
+      body: content,
+    );
   }
 
   void talk() {
@@ -80,5 +96,10 @@ void main() {
   runApp(MaterialApp(
     title: 'My app',
     home: Home(),
+    theme: ThemeData(
+      brightness: Brightness.dark,
+      primaryColor: Colors.lightBlue,
+      accentColor: Colors.cyan,
+    ),
   ));
 }

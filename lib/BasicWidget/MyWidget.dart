@@ -10,6 +10,7 @@ import './MyScaffold.dart';
 import './MyFlutterLogo.dart';
 import './MyPlaceholder.dart';
 import './MyRaisedButton.dart';
+import './MyList.dart';
 
 enum WidgetType {
   container,
@@ -23,6 +24,7 @@ enum WidgetType {
   appBar,
   flutterLogo,
   placeholder,
+  list,
 }
 
 extension WidgetTypeExtension on WidgetType {
@@ -50,8 +52,10 @@ extension WidgetTypeExtension on WidgetType {
         return MyFlutterLogo();
       case WidgetType.placeholder:
         return MyPlaceholder();
-      default:
-        return Text('none');
+      case WidgetType.list:
+        return MyList();
+      // default:
+      //   return Text('none');
     }
   }
 
@@ -67,6 +71,8 @@ extension WidgetTypeExtension on WidgetType {
         return 'Image';
       case WidgetType.text:
         return 'Text';
+      case WidgetType.icon:
+        return 'Icon';
       case WidgetType.raisedButton:
         return 'Raised Button';
       case WidgetType.scaffold:
@@ -77,8 +83,10 @@ extension WidgetTypeExtension on WidgetType {
         return 'Flutter Logo';
       case WidgetType.placeholder:
         return 'Place Holder';
-      default:
-        return 'Not Definied';
+      case WidgetType.list:
+        return 'List';
+      // default:
+      //   return 'Not Definied';
     }
   }
 }
