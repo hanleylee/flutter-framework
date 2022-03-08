@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import './BasicWidget/MyWidget.dart';
-import './MyTheme.dart';
+import './MyThemeWidget.dart';
 import './MyGestureDetector.dart';
+import './PassDataToSuperWidget.dart';
 
 enum ListItemType {
   none,
   basicWidget,
   theme,
   gestureDetector,
+  passDataToSuper,
 }
 
 extension ListItemTypeExtension on ListItemType {
@@ -21,6 +23,8 @@ extension ListItemTypeExtension on ListItemType {
         return 'Theme';
       case ListItemType.gestureDetector:
         return 'GestureDetector';
+      case ListItemType.passDataToSuper:
+        return 'Pass Data To Super';
     }
   }
 
@@ -39,9 +43,13 @@ extension ListItemTypeExtension on ListItemType {
       case ListItemType.gestureDetector:
         content = MyGestureDetector();
         break;
+      case ListItemType.passDataToSuper:
+        content = PassDataToSuperWidget();
+        break;
     }
     return Scaffold(
       body: content,
+      appBar: AppBar(title: Text(this.rowName)),
     );
   }
 

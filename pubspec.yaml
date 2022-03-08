@@ -30,6 +30,7 @@ dependencies:
   flutter:
     sdk: flutter
 
+  http: ^0.13.4
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -85,3 +86,4 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+# vim:set ft=yaml sw=2 ts=2 tw=150:

@@ -5,17 +5,20 @@ import 'package:flutter/foundation.dart';
 class MyList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MyListUltimate();
-    // return Scaffold(
-    //   body: Column(
-    //     children: [
-    //       // 为何不会显示?
-    //       // MyListVertical(),
-    //       // MyListHorizontal(),
-    //       MyListUltimate(),
-    //     ],
-    //   ),
-    // );
+    // return MyListUltimate();
+    return Scaffold(
+      body: Column(
+        children: [
+          // 为何不会显示?
+          Expanded(child: MyListVertical()),
+          Expanded(
+            child: MyListHorizontal(),
+            flex: 10,
+          ),
+          Expanded(child: MyListUltimate()),
+        ],
+      ),
+    );
     // return MyListVertical();
     // return Column(
     //   children: [MyListVertical(), MyListHorizontal()],
@@ -82,24 +85,21 @@ class MyListUltimate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Ultimate List')),
-      body: ListView.builder(
-          itemCount: items.length,
-          itemBuilder: (context, index) {
-            final item = items[index];
-            return Dismissible(
-                key: Key(item),
-                onDismissed: (direction) {
-                  items.removeAt(index);
-                  Scaffold.of(context)
-                      .showSnackBar(SnackBar(content: Text("$item dismissed")));
-                },
-                background: Container(color: Colors.red),
-                child: ListTile(
-                  title: Text('$item'),
-                ));
-          }),
-    );
+    return ListView.builder(
+        itemCount: items.length,
+        itemBuilder: (context, index) {
+          final item = items[index];
+          return Dismissible(
+              key: Key(item),
+              onDismissed: (direction) {
+                items.removeAt(index);
+                Scaffold.of(context)
+                    .showSnackBar(SnackBar(content: Text("$item dismissed")));
+              },
+              background: Container(color: Colors.red),
+              child: ListTile(
+                title: Text('$item'),
+              ));
+        });
   }
 }
