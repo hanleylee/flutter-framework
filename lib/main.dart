@@ -49,7 +49,7 @@ extension ListItemTypeExtension on ListItemType {
     }
     return Scaffold(
       body: content,
-      appBar: AppBar(title: Text(this.rowName)),
+      appBar: AppBar(title: Text(rowName)),
     );
   }
 
@@ -107,7 +107,6 @@ void main() {
     theme: ThemeData(
       brightness: Brightness.dark,
       primaryColor: Colors.lightBlue,
-      accentColor: Colors.cyan,
     ),
   ));
 }
