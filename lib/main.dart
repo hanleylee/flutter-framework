@@ -3,6 +3,7 @@ import './BasicWidget/MyWidget.dart';
 import './MyThemeWidget.dart';
 import './MyGestureDetector.dart';
 import './PassDataToSuperWidget.dart';
+import './MyWebView.dart';
 
 enum ListItemType {
   none,
@@ -10,6 +11,7 @@ enum ListItemType {
   theme,
   gestureDetector,
   passDataToSuper,
+  webview,
 }
 
 extension ListItemTypeExtension on ListItemType {
@@ -25,6 +27,8 @@ extension ListItemTypeExtension on ListItemType {
         return 'GestureDetector';
       case ListItemType.passDataToSuper:
         return 'Pass Data To Super';
+      case ListItemType.webview:
+        return 'Web View';
     }
   }
 
@@ -45,6 +49,9 @@ extension ListItemTypeExtension on ListItemType {
         break;
       case ListItemType.passDataToSuper:
         content = PassDataToSuperWidget();
+        break;
+      case ListItemType.webview:
+        content = MyWebView();
         break;
     }
     return Scaffold(

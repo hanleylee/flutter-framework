@@ -1,5 +1,7 @@
 PODS:
   - Flutter (1.0.0)
+  - path_provider_ios (0.0.1):
+    - Flutter
   - sensors_analytics_flutter_plugin (2.0.2):
     - Flutter
     - SensorsAnalyticsSDK (>= 2.1.17)
@@ -19,10 +21,14 @@ PODS:
     - SensorsAnalyticsSDK/Base
   - SensorsAnalyticsSDK/Visualized (4.2.3):
     - SensorsAnalyticsSDK/AutoTrack
+  - webview_flutter_wkwebview (0.0.1):
+    - Flutter
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
+  - path_provider_ios (from `.symlinks/plugins/path_provider_ios/ios`)
   - sensors_analytics_flutter_plugin (from `.symlinks/plugins/sensors_analytics_flutter_plugin/ios`)
+  - webview_flutter_wkwebview (from `.symlinks/plugins/webview_flutter_wkwebview/ios`)
 
 SPEC REPOS:
   trunk:
@@ -31,13 +37,19 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
+  path_provider_ios:
+    :path: ".symlinks/plugins/path_provider_ios/ios"
   sensors_analytics_flutter_plugin:
     :path: ".symlinks/plugins/sensors_analytics_flutter_plugin/ios"
+  webview_flutter_wkwebview:
+    :path: ".symlinks/plugins/webview_flutter_wkwebview/ios"
 
 SPEC CHECKSUMS:
   Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  path_provider_ios: 14f3d2fd28c4fdb42f44e0f751d12861c43cee02
   sensors_analytics_flutter_plugin: 08e1300785bef635eb4e70694ed7f9bf086836b2
   SensorsAnalyticsSDK: e06584f75c13d39932da97627ba5dfd7c99f12d4
+  webview_flutter_wkwebview: 005fbd90c888a42c5690919a1527ecc6649e1162
 
 PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
 
