@@ -7,7 +7,7 @@ class MyContainer extends StatelessWidget {
       height: 56,
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       decoration: const BoxDecoration(color: Colors.blue),
-      child: Text('bottom'),
+      child: const Text('bottom'),
     );
   }
 }

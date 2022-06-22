@@ -4,7 +4,7 @@ class MyColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
+      children: const [
         Text(
           'section 1',
           style: TextStyle(color: Colors.white, backgroundColor: Colors.red),

@@ -8,7 +8,7 @@ class MyAppBar extends StatelessWidget {
     return AppBar(
       leading: IconButton(
         onPressed: () {
-          print('Menu is tapped!');
+          debugPrint("Menu is tapped!");
         },
         icon: const Icon(Icons.menu),
         color: Colors.red,
