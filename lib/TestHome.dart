@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/Enterable/ListItemType.dart';
 
-class Home extends StatelessWidget {
+class TestHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +25,8 @@ class Home extends StatelessWidget {
           children: ListItemType.values.map((type) {
             return ListTile(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => type.widget));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => type.widget));
               },
               leading: const Icon(Icons.map),
               title: Text(type.rowName),
@@ -40,17 +41,4 @@ class Home extends StatelessWidget {
       ),
     );
   }
-}
-
-void main() {
-  runApp(MaterialApp(
-    title: 'My app',
-    // home: Home(),
-    initialRoute: "/home",
-    theme: ThemeData(
-      brightness: Brightness.dark,
-      primaryColor: Colors.lightBlue,
-    ),
-    routes: {"/home": (_) => Home()},
-  ));
 }

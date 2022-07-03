@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
-import 'BasicWidget/MyWidget.dart';
-import 'MyGestureDetector.dart';
-import 'MyThemeWidget.dart';
-import 'MyWebView.dart';
-import 'PassDataToSuperWidget.dart';
+import 'package:myapp/Enterable/Enterable.dart';
+import 'package:myapp/MyAppLifeCycle.dart';
+import 'package:myapp/MyFutureBuilder.dart';
+import 'package:myapp/MyLayoutBuilder.dart';
+import 'package:myapp/MyNavigator.dart';
+import 'package:myapp/MyStreamBuilder.dart';
+import '../BasicWidget/MyBasicWidget.dart';
+import '../MyGestureDetector.dart';
+import '../MyThemeWidget.dart';
+import '../MyWebView.dart';
+import '../PassDataToSuperWidget.dart';
 import 'package:myapp/MyWidgetLifeCyclePage.dart';
 
 enum ListItemType {
@@ -14,9 +20,14 @@ enum ListItemType {
   passDataToSuper,
   webview,
   lifecycle,
+  layoutBuilder,
+  futureBuilder,
+  streamBuilder,
+  myAppLifeCycle,
+  navigator
 }
 
-extension ListItemTypeExtension on ListItemType {
+extension MainEntryType on ListItemType {
   String get rowName {
     switch (this) {
       case ListItemType.none:
@@ -33,6 +44,16 @@ extension ListItemTypeExtension on ListItemType {
         return 'Web View';
       case ListItemType.lifecycle:
         return "Life Cycle";
+      case ListItemType.layoutBuilder:
+        return "Layout Builder";
+      case ListItemType.futureBuilder:
+        return "Future Builder";
+      case ListItemType.streamBuilder:
+        return "Stream Builder";
+      case ListItemType.myAppLifeCycle:
+        return "App Life Cycle";
+      case ListItemType.navigator:
+        return "Navigator";
     }
   }
 
@@ -43,7 +64,7 @@ extension ListItemTypeExtension on ListItemType {
         content = const Text('none');
         break;
       case ListItemType.basicWidget:
-        content = MyWidget();
+        content = MyBasicWidget();
         break;
       case ListItemType.theme:
         content = MyThemeWidget();
@@ -59,6 +80,21 @@ extension ListItemTypeExtension on ListItemType {
         break;
       case ListItemType.lifecycle:
         content = WidgetLiftCyclePage();
+        break;
+      case ListItemType.layoutBuilder:
+        content = MyLayoutBuilder();
+        break;
+      case ListItemType.futureBuilder:
+        content = MyFutureBuilder();
+        break;
+      case ListItemType.streamBuilder:
+        content = MyStreamBuilder();
+        break;
+      case ListItemType.myAppLifeCycle:
+        content = MyAppLifeCycle();
+        break;
+      case ListItemType.navigator:
+        content = MyNavigator();
         break;
     }
     return Scaffold(

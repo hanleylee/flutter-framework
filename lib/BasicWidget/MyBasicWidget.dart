@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/MyWebView.dart';
-import './MyContainer.dart';
-import './MyRow.dart';
-import './MyIcon.dart';
-import './MyText.dart';
-import './MyImage.dart';
-import './MyAppBar.dart';
-import './MyColumn.dart';
-import './MyScaffold.dart';
-import './MyFlutterLogo.dart';
-import './MyPlaceholder.dart';
-import './MyRaisedButton.dart';
-import './MyList.dart';
+import 'package:myapp/BasicWidget/MyButton.dart';
+import 'package:myapp/BasicWidget/MyContainer.dart';
+import 'package:myapp/BasicWidget/MyRow.dart';
+import 'package:myapp/BasicWidget/MyIcon.dart';
+import 'package:myapp/BasicWidget/MyText.dart';
+import 'package:myapp/BasicWidget/MyImage.dart';
+import 'package:myapp/BasicWidget/MyAppBar.dart';
+import 'package:myapp/BasicWidget/MyColumn.dart';
+import 'package:myapp/BasicWidget/MyScaffold.dart';
+import 'package:myapp/BasicWidget/MyFlutterLogo.dart';
+import 'package:myapp/BasicWidget/MyPlaceholder.dart';
+import 'package:myapp/BasicWidget/MyButton.dart';
+import 'package:myapp/BasicWidget/MyList.dart';
 
 enum WidgetType {
   container,
@@ -20,7 +20,7 @@ enum WidgetType {
   image,
   text,
   icon,
-  raisedButton,
+  button,
   scaffold,
   appBar,
   flutterLogo,
@@ -43,8 +43,8 @@ extension WidgetTypeExtension on WidgetType {
         return MyText();
       case WidgetType.icon:
         return MyIcon();
-      case WidgetType.raisedButton:
-        return MyRaisedButton();
+      case WidgetType.button:
+        return MyButton();
       case WidgetType.scaffold:
         return MyScaffold();
       case WidgetType.appBar:
@@ -74,8 +74,8 @@ extension WidgetTypeExtension on WidgetType {
         return 'Text';
       case WidgetType.icon:
         return 'Icon';
-      case WidgetType.raisedButton:
-        return 'Raised Button';
+      case WidgetType.button:
+        return 'Button';
       case WidgetType.scaffold:
         return 'scaffold';
       case WidgetType.appBar:
@@ -92,8 +92,8 @@ extension WidgetTypeExtension on WidgetType {
   }
 }
 
-class MyWidget extends StatelessWidget {
-  MyWidget();
+class MyBasicWidget extends StatelessWidget {
+  MyBasicWidget();
 
   @override
   Widget build(BuildContext context) {
