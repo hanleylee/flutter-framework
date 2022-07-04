@@ -6,10 +6,9 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const IconButton(
+        leading: IconButton(
           icon: Icon(Icons.menu),
-          tooltip: 'Navigation menu',
-          onPressed: null,
+          tooltip: 'Navigation menu', onPressed: () {  },
         ),
         title: const Text('Example title'),
         actions: const [
@@ -33,10 +32,10 @@ class Home extends StatelessWidget {
           }).toList(),
         ),
       ),
-      floatingActionButton: const FloatingActionButton(
+      floatingActionButton: FloatingActionButton(
         tooltip: 'Add',
         child: Icon(Icons.add),
-        onPressed: null,
+        onPressed: () { print(123); },
       ),
     );
   }
@@ -49,7 +48,10 @@ void main() {
     initialRoute: "/home",
     theme: ThemeData(
       brightness: Brightness.dark,
+      accentColor: Colors.black,
       primaryColor: Colors.lightBlue,
+      iconTheme: const IconThemeData(color: Colors.yellow),
+      textTheme: const TextTheme(bodyText1: TextStyle(color: Colors.red)),
     ),
     routes: {"/home": (_) => Home()},
   ));

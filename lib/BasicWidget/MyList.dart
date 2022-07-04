@@ -3,6 +3,8 @@ import 'package:flutter/foundation.dart';
 
 /// 123
 class MyList extends StatelessWidget {
+  const MyList({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     // return MyListUltimate();
@@ -27,6 +29,8 @@ class MyList extends StatelessWidget {
 }
 
 class MyListVertical extends StatelessWidget {
+  const MyListVertical({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,6 +54,8 @@ class MyListVertical extends StatelessWidget {
 }
 
 class MyListHorizontal extends StatelessWidget {
+  const MyListHorizontal({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -82,6 +88,8 @@ class MyListHorizontal extends StatelessWidget {
 
 class MyListUltimate extends StatelessWidget {
   List<String> items = List<String>.generate(10000, (index) => "item $index");
+
+  MyListUltimate({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

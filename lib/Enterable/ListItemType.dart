@@ -3,6 +3,7 @@ import 'package:myapp/Enterable/Enterable.dart';
 import 'package:myapp/MyAppLifeCycle.dart';
 import 'package:myapp/MyFutureBuilder.dart';
 import 'package:myapp/MyLayoutBuilder.dart';
+import 'package:myapp/MyListener.dart';
 import 'package:myapp/MyNavigator.dart';
 import 'package:myapp/MyStreamBuilder.dart';
 import '../BasicWidget/MyBasicWidget.dart';
@@ -24,7 +25,9 @@ enum ListItemType {
   futureBuilder,
   streamBuilder,
   myAppLifeCycle,
-  navigator
+  navigator,
+  listener,
+
 }
 
 extension MainEntryType on ListItemType {
@@ -54,6 +57,8 @@ extension MainEntryType on ListItemType {
         return "App Life Cycle";
       case ListItemType.navigator:
         return "Navigator";
+      case ListItemType.listener:
+        return "Listener";
     }
   }
 
@@ -70,7 +75,7 @@ extension MainEntryType on ListItemType {
         content = MyThemeWidget();
         break;
       case ListItemType.gestureDetector:
-        content = MyGestureDetector();
+        content = const MyGestureDetector();
         break;
       case ListItemType.passDataToSuper:
         content = PassDataToSuperWidget();
@@ -85,16 +90,19 @@ extension MainEntryType on ListItemType {
         content = MyLayoutBuilder();
         break;
       case ListItemType.futureBuilder:
-        content = MyFutureBuilder();
+        content = const MyFutureBuilder();
         break;
       case ListItemType.streamBuilder:
-        content = MyStreamBuilder();
+        content = const MyStreamBuilder();
         break;
       case ListItemType.myAppLifeCycle:
-        content = MyAppLifeCycle();
+        content = const MyAppLifeCycle();
         break;
       case ListItemType.navigator:
-        content = MyNavigator();
+        content = const MyNavigator();
+        break;
+      case ListItemType.listener:
+        content = const MyListener();
         break;
     }
     return Scaffold(
