@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/BasicWidget/MyButton.dart';
-import 'package:myapp/BasicWidget/MyContainer.dart';
-import 'package:myapp/BasicWidget/MyCustomScrollView.dart';
-import 'package:myapp/BasicWidget/MyListBuilder.dart';
-import 'package:myapp/BasicWidget/MyListSeparator.dart';
-import 'package:myapp/BasicWidget/MyRow.dart';
-import 'package:myapp/BasicWidget/MyIcon.dart';
-import 'package:myapp/BasicWidget/MyText.dart';
-import 'package:myapp/BasicWidget/MyImage.dart';
-import 'package:myapp/BasicWidget/MyAppBar.dart';
-import 'package:myapp/BasicWidget/MyColumn.dart';
-import 'package:myapp/BasicWidget/MyScaffold.dart';
-import 'package:myapp/BasicWidget/MyFlutterLogo.dart';
-import 'package:myapp/BasicWidget/MyPlaceholder.dart';
-import 'package:myapp/BasicWidget/MyButton.dart';
-import 'package:myapp/BasicWidget/MyList.dart';
-import 'package:myapp/BasicWidget/MyCustomPaint.dart';
+import 'package:myapp/Entries/BasicWidget/MyButton.dart';
+import 'package:myapp/Entries/BasicWidget/MyContainer.dart';
+import 'package:myapp/Entries/BasicWidget/MyCustomScrollView.dart';
+import 'package:myapp/Entries/BasicWidget/MyListBuilder.dart';
+import 'package:myapp/Entries/BasicWidget/MyListSeparator.dart';
+import 'package:myapp/Entries/BasicWidget/MyRow.dart';
+import 'package:myapp/Entries/BasicWidget/MyIcon.dart';
+import 'package:myapp/Entries/BasicWidget/MyText.dart';
+import 'package:myapp/Entries/BasicWidget/MyImage.dart';
+import 'package:myapp/Entries/BasicWidget/MyAppBar.dart';
+import 'package:myapp/Entries/BasicWidget/MyColumn.dart';
+import 'package:myapp/Entries/BasicWidget/MyScaffold.dart';
+import 'package:myapp/Entries/BasicWidget/MyFlutterLogo.dart';
+import 'package:myapp/Entries/BasicWidget/MyPlaceholder.dart';
+import 'package:myapp/Entries/BasicWidget/MyButton.dart';
+import 'package:myapp/Entries/BasicWidget/MyList.dart';
+import 'package:myapp/Entries/BasicWidget/MyCustomPaint.dart';
 
 enum BasicWidgetType {
   container,

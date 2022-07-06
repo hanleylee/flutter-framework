@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/Enterable/Enterable.dart';
-import 'package:myapp/MyAppLifeCycle.dart';
-import 'package:myapp/MyFutureBuilder.dart';
-import 'package:myapp/MyLayoutBuilder.dart';
-import 'package:myapp/MyListener.dart';
-import 'package:myapp/MyNavigator.dart';
-import 'package:myapp/MyStreamBuilder.dart';
-import '../BasicWidget/MyBasicWidget.dart';
-import '../MyGestureDetector.dart';
-import '../MyThemeWidget.dart';
-import '../MyWebView.dart';
-import '../PassDataToSuperWidget.dart';
-import 'package:myapp/MyWidgetLifeCyclePage.dart';
+import 'package:myapp/Entries/MyAppLifeCycle.dart';
+import 'package:myapp/Entries/MyFutureBuilder.dart';
+import 'package:myapp/Entries/MyLayoutBuilder.dart';
+import 'package:myapp/Entries/MyListener.dart';
+import 'package:myapp/Entries/MyNavigator.dart';
+import 'package:myapp/Entries/MyStreamBuilder.dart';
+import 'package:myapp/Entries/BasicWidget/MyBasicWidget.dart';
+import 'package:myapp/Entries/MyGestureDetector.dart';
+import 'package:myapp/Entries/MyThemeWidget.dart';
+import 'package:myapp/Entries/MyWebView.dart';
+import 'package:myapp/Entries/PassDataToSuperWidget.dart';
+import 'package:myapp/Entries/MyWidgetLifeCyclePage.dart';
+import 'package:myapp/Entries/Route/MyRouteFirstPage.dart';
+import 'package:myapp/Entries/Route/MyRouteSecondPage.dart';
 
 enum ListItemType {
   none,
@@ -27,6 +28,7 @@ enum ListItemType {
   myAppLifeCycle,
   navigator,
   listener,
+  route
 
 }
 
@@ -59,6 +61,8 @@ extension MainEntryType on ListItemType {
         return "Navigator";
       case ListItemType.listener:
         return "Listener";
+      case ListItemType.route:
+        return "Route";
     }
   }
 
@@ -103,6 +107,9 @@ extension MainEntryType on ListItemType {
         break;
       case ListItemType.listener:
         content = const MyListener();
+        break;
+      case ListItemType.route:
+        content = const MyRouteFirstPage();
         break;
     }
     return Scaffold(
