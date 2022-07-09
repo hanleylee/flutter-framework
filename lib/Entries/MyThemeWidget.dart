@@ -8,7 +8,7 @@ class MyThemeWidget extends StatelessWidget {
         color: Theme.of(context).colorScheme.secondary,
         child: Text(
           'Text with a background color',
-          style: Theme.of(context).textTheme.titleMedium,
+          // style: Theme.of(context).textTheme.titleMedium,
         ),
       ),
     );

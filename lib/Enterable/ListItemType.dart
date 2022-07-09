@@ -4,6 +4,7 @@ import 'package:myapp/Entries/MyFutureBuilder.dart';
 import 'package:myapp/Entries/MyLayoutBuilder.dart';
 import 'package:myapp/Entries/MyListener.dart';
 import 'package:myapp/Entries/MyNavigator.dart';
+import 'package:myapp/Entries/MyPlatformViewWidget.dart';
 import 'package:myapp/Entries/MyStreamBuilder.dart';
 import 'package:myapp/Entries/BasicWidget/MyBasicWidget.dart';
 import 'package:myapp/Entries/MyGestureDetector.dart';
@@ -28,7 +29,8 @@ enum ListItemType {
   myAppLifeCycle,
   navigator,
   listener,
-  route
+  route,
+  platformView,
 
 }
 
@@ -63,6 +65,8 @@ extension MainEntryType on ListItemType {
         return "Listener";
       case ListItemType.route:
         return "Route";
+      case ListItemType.platformView:
+        return "Platform View";
     }
   }
 
@@ -110,6 +114,9 @@ extension MainEntryType on ListItemType {
         break;
       case ListItemType.route:
         content = const MyRouteFirstPage();
+        break;
+      case ListItemType.platformView:
+        content = const MyPlatformViewWidget();
         break;
     }
     return Scaffold(
