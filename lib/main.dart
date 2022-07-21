@@ -8,7 +8,8 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(Icons.menu),
-          tooltip: 'Navigation menu', onPressed: () {  },
+          tooltip: 'Navigation menu',
+          onPressed: () {},
         ),
         title: const Text('Example title'),
         actions: const [
@@ -24,7 +25,8 @@ class Home extends StatelessWidget {
           children: ListItemType.values.map((type) {
             return ListTile(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => type.widget));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => type.widget));
               },
               leading: const Icon(Icons.map),
               title: Text(type.rowName),
@@ -35,7 +37,9 @@ class Home extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         tooltip: 'Add',
         child: Icon(Icons.add),
-        onPressed: () { print(123); },
+        onPressed: () {
+          print(123);
+        },
       ),
     );
   }
