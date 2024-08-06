@@ -45,7 +45,7 @@ class _WidgetLiftCyclePageState extends State<WidgetLiftCyclePage> {
     return Center(
       child: Column(
         children: <Widget>[
-          RaisedButton(
+          ElevatedButton(
             // 点击事件
             onPressed: (){
               // 回调更新期 生命周期函数

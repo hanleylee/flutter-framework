@@ -101,7 +101,7 @@ class MyListUltimate extends StatelessWidget {
               key: Key(item),
               onDismissed: (direction) {
                 items.removeAt(index);
-                Scaffold.of(context)
+                ScaffoldMessenger.of(context)
                     .showSnackBar(SnackBar(content: Text("$item dismissed")));
               },
               background: Container(color: Colors.red),

@@ -52,10 +52,10 @@ void main() {
     initialRoute: "/home",
     theme: ThemeData(
       brightness: Brightness.dark,
-      accentColor: Colors.black,
+      // accentColor: Colors.black,
       primaryColor: Colors.lightBlue,
       iconTheme: const IconThemeData(color: Colors.yellow),
-      textTheme: const TextTheme(bodyText1: TextStyle(color: Colors.red)),
+      textTheme: const TextTheme(titleMedium: TextStyle(color: Colors.red)),
     ),
     routes: {"/home": (_) => Home()},
   ));

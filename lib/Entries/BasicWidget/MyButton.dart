@@ -15,9 +15,9 @@ class MyButton extends StatelessWidget {
               onPressed: () => print('FloatingActionButton pressed'),
               child: Text('Btn'),
             ),
-            FlatButton(onPressed: () => print("FlatButton pressed"), child: Text("Btn")),
-            RaisedButton(child: Text("Button1"), onPressed: () => print("2")),
-            RaisedButton(child: Text("Button2"), onPressed: () => print("1")),
+            TextButton(onPressed: () => print("FlatButton pressed"), child: Text("Btn")),
+            ElevatedButton(child: Text("Button1"), onPressed: () => print("2")),
+            ElevatedButton(child: Text("Button2"), onPressed: () => print("1")),
             ElevatedButton(
                 onPressed: () {
                   dynamic num1 = 1;

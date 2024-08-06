@@ -36,14 +36,14 @@ class _MyStreamBuilderState extends State<MyStreamBuilder> {
   Widget build(BuildContext context) {
     return Center(
       child: DefaultTextStyle(
-        style: Theme.of(context).textTheme.headline4!,
+        style: Theme.of(context).textTheme.headlineMedium!,
         child: Column(
           children: [
-            RaisedButton(child: Text("10"), onPressed: () => controller.sink.add(10)),
-            RaisedButton(child: Text("1"), onPressed: () => controller.sink.add(1)),
-            RaisedButton(child: Text("Hi"), onPressed: () => controller.sink.add("Hi")),
-            RaisedButton(child: Text("Error"), onPressed: () => controller.sink.addError("opps")),
-            RaisedButton(child: Text("Close"), onPressed: () => controller.sink.close()),
+            ElevatedButton(child: Text("10"), onPressed: () => controller.sink.add(10)),
+            ElevatedButton(child: Text("1"), onPressed: () => controller.sink.add(1)),
+            ElevatedButton(child: Text("Hi"), onPressed: () => controller.sink.add("Hi")),
+            ElevatedButton(child: Text("Error"), onPressed: () => controller.sink.addError("opps")),
+            ElevatedButton(child: Text("Close"), onPressed: () => controller.sink.close()),
             StreamBuilder(
               stream: controller.stream,
               builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {

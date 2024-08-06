@@ -4,7 +4,7 @@ class PassDataToSuperWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: RaisedButton(
+      child: ElevatedButton(
         onPressed: () {
           _navigateAndDisplaySelection(context);
         },
@@ -19,7 +19,7 @@ class PassDataToSuperWidget extends StatelessWidget {
       MaterialPageRoute(builder: (context) => SelectionScreen()),
     );
 
-    Scaffold.of(context).showSnackBar(SnackBar(content: Text("$result")));
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("$result")));
   }
 }
 
@@ -34,7 +34,7 @@ class SelectionScreen extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: RaisedButton(
+              child: ElevatedButton(
                 onPressed: () {
                   Navigator.pop(context, 'Yep!');
                 },
@@ -43,7 +43,7 @@ class SelectionScreen extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.all(8.0),
-              child: RaisedButton(
+              child: ElevatedButton(
                 onPressed: () {
                   Navigator.pop(context, 'Nope.');
                 },
