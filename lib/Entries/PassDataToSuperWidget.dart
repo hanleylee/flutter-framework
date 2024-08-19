@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class PassDataToSuperWidget extends StatelessWidget {
+  const PassDataToSuperWidget({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Center(

@@ -9,11 +9,11 @@ class MyRouteFirstPage extends StatelessWidget {
     return Column(children: [
       ElevatedButton(
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (_) => MyRouteSecondPage())).then((value) {
-              print(value as int);
+            Navigator.push(context, MaterialPageRoute(builder: (_) => const MyRouteSecondPage())).then((value) {
+              debugPrint(value);
             });
           },
-          child: Text("btn1"))
+          child: const Text("btn1"))
     ]);
   }
 }

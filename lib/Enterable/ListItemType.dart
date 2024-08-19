@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/Entries/MVVM/biz_mvvm.dart';
 import 'package:myapp/Entries/MyAppLifeCycle.dart';
 import 'package:myapp/Entries/MyFutureBuilder.dart';
 import 'package:myapp/Entries/MyLayoutBuilder.dart';
 import 'package:myapp/Entries/MyListener.dart';
 import 'package:myapp/Entries/MyNavigator.dart';
+import 'package:myapp/Entries/MVVM/mvvm.dart';
 import 'package:myapp/Entries/MyPlatformViewWidget.dart';
 import 'package:myapp/Entries/MyStreamBuilder.dart';
 import 'package:myapp/Entries/BasicWidget/MyBasicWidget.dart';
@@ -31,6 +33,7 @@ enum ListItemType {
   listener,
   route,
   platformView,
+  notifier,
 
 }
 
@@ -67,6 +70,8 @@ extension MainEntryType on ListItemType {
         return "Route";
       case ListItemType.platformView:
         return "Platform View";
+      case ListItemType.notifier:
+        return "My Notifier";
     }
   }
 
@@ -117,6 +122,9 @@ extension MainEntryType on ListItemType {
         break;
       case ListItemType.platformView:
         content = const MyPlatformViewWidget();
+        break;
+      case ListItemType.notifier:
+        content = BizView(BizViewModel('h', 30));
         break;
     }
     return Scaffold(

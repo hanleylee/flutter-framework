@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 class MyColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: const [
+    return const Column(
+      children: [
         Text(
           'section 1',
           style: TextStyle(color: Colors.white, backgroundColor: Colors.red),
