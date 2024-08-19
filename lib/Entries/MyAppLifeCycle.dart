@@ -17,7 +17,7 @@ class _MyAppLifeCycleState extends State<MyAppLifeCycle> with WidgetsBindingObse
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(body: Container());
   }
 
   @override

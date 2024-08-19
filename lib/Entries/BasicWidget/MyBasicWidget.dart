@@ -11,8 +11,7 @@ class MyBasicWidget extends StatelessWidget {
           children: BasicWidgetType.values.map((type) {
         return ListTile(
           onTap: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => type.widget));
+            Navigator.push(context, MaterialPageRoute(builder: (context) => type.widget));
           },
           leading: Icon(Icons.map),
           title: Text(type.rowName),

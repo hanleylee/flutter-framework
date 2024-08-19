@@ -5,13 +5,15 @@ class MyAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      leading: IconButton(
-        onPressed: () {
-          debugPrint("Menu is tapped!");
-        },
-        icon: const Icon(Icons.menu),
-        color: Colors.red,
+    return Scaffold(
+      body: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            debugPrint("Menu is tapped!");
+          },
+          icon: const Icon(Icons.menu),
+          color: Colors.red,
+        ),
       ),
     );
   }

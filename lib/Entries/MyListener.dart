@@ -5,15 +5,17 @@ class MyListener extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Listener(
-      child: Container(
-        color: Colors.red, // 背景色红色
-        width: 300,
-        height: 300,
+    return Scaffold(
+      body: Listener(
+        child: Container(
+          color: Colors.red, // 背景色红色
+          width: 300,
+          height: 300,
+        ),
+        onPointerDown: (event) => print("down $event"), // 手势按下回调
+        onPointerMove: (event) => print("move $event"), // 手势移动回调
+        onPointerUp: (event) => print("up $event"), // 手势抬起回调
       ),
-      onPointerDown: (event) => print("down $event"), // 手势按下回调
-      onPointerMove: (event) => print("move $event"), // 手势移动回调
-      onPointerUp: (event) => print("up $event"), // 手势抬起回调
     );
   }
 }

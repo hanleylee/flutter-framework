@@ -5,9 +5,11 @@ class MyListBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        itemCount: 100, // 元素个数
-        itemExtent: 50.0, // 列表项高度
-        itemBuilder: (BuildContext context, int index) => ListTile(title: Text("title $index"), subtitle: Text("body $index")));
+    return Scaffold(
+      body: ListView.builder(
+          itemCount: 100, // 元素个数
+          itemExtent: 50.0, // 列表项高度
+          itemBuilder: (BuildContext context, int index) => ListTile(title: Text("title $index"), subtitle: Text("body $index"))),
+    );
   }
 }

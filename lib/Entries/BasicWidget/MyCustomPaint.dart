@@ -33,9 +33,11 @@ class WheelPainter extends CustomPainter {
 class MyCustomPainter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(
-      size: Size(200, 200),
-      painter: WheelPainter(),
+    return Scaffold(
+      body: CustomPaint(
+        size: Size(200, 200),
+        painter: WheelPainter(),
+      ),
     );
   }
 }

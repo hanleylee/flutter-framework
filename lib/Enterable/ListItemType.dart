@@ -74,55 +74,36 @@ extension MainEntryType on ListItemType {
     Widget content;
     switch (this) {
       case ListItemType.none:
-        content = const Text('none');
-        break;
+        return const Text('none');
       case ListItemType.basicWidget:
-        content = MyBasicWidget();
-        break;
+        return MyBasicWidget();
       case ListItemType.theme:
-        content = MyThemeWidget();
-        break;
+        return MyThemeWidget();
       case ListItemType.gestureDetector:
-        content = const MyGestureDetector();
-        break;
+        return const MyGestureDetector();
       case ListItemType.passDataToSuper:
-        content = PassDataToSuperWidget();
-        break;
+        return PassDataToSuperWidget();
       case ListItemType.webview:
-        content = MyWebView();
-        break;
+        return MyWebView();
       case ListItemType.lifecycle:
-        content = WidgetLiftCyclePage();
-        break;
+        return WidgetLiftCyclePage();
       case ListItemType.layoutBuilder:
-        content = MyLayoutBuilder();
-        break;
+        return MyLayoutBuilder();
       case ListItemType.futureBuilder:
-        content = const MyFutureBuilder();
-        break;
+        return const MyFutureBuilder();
       case ListItemType.streamBuilder:
-        content = const MyStreamBuilder();
-        break;
+        return const MyStreamBuilder();
       case ListItemType.myAppLifeCycle:
-        content = const MyAppLifeCycle();
-        break;
+        return const MyAppLifeCycle();
       case ListItemType.navigator:
-        content = const MyNavigator();
-        break;
+        return const MyNavigator();
       case ListItemType.listener:
-        content = const MyListener();
-        break;
+        return const MyListener();
       case ListItemType.route:
-        content = const MyRouteFirstPage();
-        break;
+        return const MyRouteFirstPage();
       case ListItemType.platformView:
-        content = const MyPlatformViewWidget();
-        break;
+        return const MyPlatformViewWidget();
     }
-    return Scaffold(
-      body: content,
-      appBar: AppBar(title: Text(rowName)),
-    );
   }
 
   void talk() {

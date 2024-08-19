@@ -6,14 +6,16 @@ class MyRouteFirstPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      ElevatedButton(
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (_) => MyRouteSecondPage())).then((value) {
-              print(value as int);
-            });
-          },
-          child: Text("btn1"))
-    ]);
+    return Scaffold(
+      body: Column(children: [
+        ElevatedButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (_) => MyRouteSecondPage())).then((value) {
+                print(value as int);
+              });
+            },
+            child: Text("btn1"))
+      ]),
+    );
   }
 }

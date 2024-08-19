@@ -13,19 +13,21 @@ class MyPlatformViewWidget extends StatelessWidget {
     final Map<String, dynamic> creationParams = <String, dynamic>{};
 
     if (defaultTargetPlatform == TargetPlatform.iOS) {
-      return Column(
-        children: [
-          Text("Flutter header"),
-          Expanded(
-            child: UiKitView(
-              viewType: viewType,
-              layoutDirection: TextDirection.ltr,
-              creationParams: creationParams,
-              creationParamsCodec: const StandardMessageCodec(),
+      return Scaffold(
+        body: Column(
+          children: [
+            Text("Flutter header"),
+            Expanded(
+              child: UiKitView(
+                viewType: viewType,
+                layoutDirection: TextDirection.ltr,
+                creationParams: creationParams,
+                creationParamsCodec: const StandardMessageCodec(),
+              ),
             ),
-          ),
-          Text("Flutter footer"),
-        ],
+            Text("Flutter footer"),
+          ],
+        ),
       );
     } else {
       return Text("123");
