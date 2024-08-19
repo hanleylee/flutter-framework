@@ -5,12 +5,14 @@ class PassDataToSuperWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: ElevatedButton(
-        onPressed: () {
-          _navigateAndDisplaySelection(context);
-        },
-        child: const Text('Pick an option, any option!'),
+    return Scaffold(
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            _navigateAndDisplaySelection(context);
+          },
+          child: const Text('Pick an option, any option!'),
+        ),
       ),
     );
   }

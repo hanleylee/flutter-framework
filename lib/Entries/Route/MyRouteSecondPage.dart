@@ -5,14 +5,14 @@ class MyRouteSecondPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(children: [
+    return Scaffold(
+      body: Column(children: [
         ElevatedButton(
             onPressed: () {
               // Navigator.pop(context);
               Navigator.popUntil(context, (route) => route.isFirst);
             },
-            child: const Text("btn1"))
+            child: Text("btn1"))
       ]),
     );
   }

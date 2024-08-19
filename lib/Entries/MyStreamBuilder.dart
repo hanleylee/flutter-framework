@@ -34,40 +34,42 @@ class _MyStreamBuilderState extends State<MyStreamBuilder> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: DefaultTextStyle(
-        style: Theme.of(context).textTheme.headlineMedium!,
-        child: Column(
-          children: [
-            ElevatedButton(child: Text("10"), onPressed: () => controller.sink.add(10)),
-            ElevatedButton(child: Text("1"), onPressed: () => controller.sink.add(1)),
-            ElevatedButton(child: Text("Hi"), onPressed: () => controller.sink.add("Hi")),
-            ElevatedButton(child: Text("Error"), onPressed: () => controller.sink.addError("opps")),
-            ElevatedButton(child: Text("Close"), onPressed: () => controller.sink.close()),
-            StreamBuilder(
-              stream: controller.stream,
-              builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-                switch (snapshot.connectionState) {
-                  case ConnectionState.none:
-                    return Text("NONE: 没有数据流");
-                    break;
-                  case ConnectionState.waiting:
-                    return Text("WAITING: 等待数据流");
-                    break;
-                  case ConnectionState.active:
-                    if (snapshot.hasError) {
-                      return Text("ACTIVE: 错误: ${snapshot.error}");
-                    } else {
-                      return Text("ACTIVE: 正常: ${snapshot.data}");
-                    }
-                    break;
-                  case ConnectionState.done:
-                    return Text("DONE: 数据流关闭");
-                    break;
-                }
-              },
-            ),
-          ],
+    return Scaffold(
+      body: Center(
+        child: DefaultTextStyle(
+          style: Theme.of(context).textTheme.headlineMedium!,
+          child: Column(
+            children: [
+              ElevatedButton(child: Text("10"), onPressed: () => controller.sink.add(10)),
+              ElevatedButton(child: Text("1"), onPressed: () => controller.sink.add(1)),
+              ElevatedButton(child: Text("Hi"), onPressed: () => controller.sink.add("Hi")),
+              ElevatedButton(child: Text("Error"), onPressed: () => controller.sink.addError("opps")),
+              ElevatedButton(child: Text("Close"), onPressed: () => controller.sink.close()),
+              StreamBuilder(
+                stream: controller.stream,
+                builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+                  switch (snapshot.connectionState) {
+                    case ConnectionState.none:
+                      return Text("NONE: 没有数据流");
+                      break;
+                    case ConnectionState.waiting:
+                      return Text("WAITING: 等待数据流");
+                      break;
+                    case ConnectionState.active:
+                      if (snapshot.hasError) {
+                        return Text("ACTIVE: 错误: ${snapshot.error}");
+                      } else {
+                        return Text("ACTIVE: 正常: ${snapshot.data}");
+                      }
+                      break;
+                    case ConnectionState.done:
+                      return Text("DONE: 数据流关闭");
+                      break;
+                  }
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -11,7 +11,6 @@ import 'package:myapp/Entries/BasicWidget/MyImage.dart';
 import 'package:myapp/Entries/BasicWidget/MyAppBar.dart';
 import 'package:myapp/Entries/BasicWidget/MyColumn.dart';
 import 'package:myapp/Entries/BasicWidget/MyScaffold.dart';
-import 'package:myapp/Entries/BasicWidget/MyFlutterLogo.dart';
 import 'package:myapp/Entries/BasicWidget/MyPlaceholder.dart';
 import 'package:myapp/Entries/BasicWidget/MyButton.dart';
 import 'package:myapp/Entries/BasicWidget/MyList.dart';
@@ -27,7 +26,6 @@ enum BasicWidgetType {
   button,
   scaffold,
   appBar,
-  flutterLogo,
   placeholder,
   list,
   listBuilder,
@@ -41,60 +39,36 @@ extension WidgetTypeExtension on BasicWidgetType {
     Widget content;
     switch (this) {
       case BasicWidgetType.container:
-        content = MyContainer();
-        break;
+        return MyContainer();
       case BasicWidgetType.row:
-        content = MyRow();
-        break;
+        return MyRow();
       case BasicWidgetType.column:
-        content = MyColumn();
-        break;
+        return MyColumn();
       case BasicWidgetType.image:
-        content = MyImage();
-        break;
+        return MyImage();
       case BasicWidgetType.text:
-        content = MyText();
-        break;
+        return MyText();
       case BasicWidgetType.icon:
-        content = MyIcon();
-        break;
+        return MyIcon();
       case BasicWidgetType.button:
-        content = const MyButton();
-        break;
+        return const MyButton();
       case BasicWidgetType.scaffold:
-        content = MyScaffold();
-        break;
+        return MyScaffold();
       case BasicWidgetType.appBar:
-        content = MyAppBar();
-        break;
-      case BasicWidgetType.flutterLogo:
-        content = MyFlutterLogo();
-        break;
+        return MyAppBar();
       case BasicWidgetType.placeholder:
-        content = MyPlaceholder();
-        break;
+        return MyPlaceholder();
       case BasicWidgetType.list:
-        content = const MyList();
-        break;
+        return const MyList();
       case BasicWidgetType.listBuilder:
-        content = const MyListBuilder();
-        break;
+        return const MyListBuilder();
       case BasicWidgetType.listSeperator:
-        content = const MyListSeparator();
-        break;
+        return const MyListSeparator();
       case BasicWidgetType.customScrollView:
-        content = const MyCustomScrollView();
-        break;
+        return const MyCustomScrollView();
       case BasicWidgetType.customPaint:
-        content = MyCustomPainter();
-        break;
-    // default:
-    //   return Text('none');
+        return MyCustomPainter();
     }
-    return Scaffold(
-      body: content,
-      appBar: AppBar(title: Text(rowName)),
-    );
   }
 
   String get rowName {
@@ -117,8 +91,6 @@ extension WidgetTypeExtension on BasicWidgetType {
         return 'scaffold';
       case BasicWidgetType.appBar:
         return 'App Bar';
-      case BasicWidgetType.flutterLogo:
-        return 'Flutter Logo';
       case BasicWidgetType.placeholder:
         return 'Place Holder';
       case BasicWidgetType.list:
@@ -131,8 +103,8 @@ extension WidgetTypeExtension on BasicWidgetType {
         return "Custom ScrollView";
       case BasicWidgetType.customPaint:
         return "Custom Painter";
-    // default:
-    //   return 'Not Definied';
+      // default:
+      //   return 'Not Definied';
     }
   }
 }

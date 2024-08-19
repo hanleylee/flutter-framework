@@ -42,20 +42,22 @@ class _WidgetLiftCyclePageState extends State<WidgetLiftCyclePage> {
   Widget build(BuildContext context) {
     print("build");
 
-    return Center(
-      child: Column(
-        children: <Widget>[
-          ElevatedButton(
-            // 点击事件
-            onPressed: (){
-              // 回调更新期 生命周期函数
-              setState(() {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          children: <Widget>[
+            ElevatedButton(
+              // 点击事件
+              onPressed: (){
+                // 回调更新期 生命周期函数
+                setState(() {
 
-              });
-            },
-            child: Text("调用 setState() 方法"),
-          ),
-        ],
+                });
+              },
+              child: Text("调用 setState() 方法"),
+            ),
+          ],
+        ),
       ),
     );
   }
